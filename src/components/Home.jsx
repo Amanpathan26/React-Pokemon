@@ -91,7 +91,8 @@ export const Home = () => {
             </div>
 
             <div className="flex flex-wrap gap-3 justify-around">
-                {filteredPokemons.map((pokemon) => (
+                {filteredPokemons.length > 0 ?
+                filteredPokemons.map((pokemon) => (
                     <div key={pokemon.id}
                         className="flex basis-[100%] sm:basis-[30%] justify-center items-center gap-2 border border-gray-300 rounded py-3 shadow-xl cursor-pointer transition-scale duration-300 hover:scale-[.98]">
                         <img
@@ -109,7 +110,7 @@ export const Home = () => {
                         </div>
                         </div>
                     </div>
-                ))}
+                )) : <h1 className="h-[70vh] flex justify-center items-center">Not found</h1>}
             </div>
         </main>
     );
